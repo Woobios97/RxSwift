@@ -9,11 +9,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-
 class RepositoryListViewController: UITableViewController {
     
     private let organization = "Apple"
-    /// BehaviorSubject 타입의 repositories. 초기값으로 빈 배열을 가짐.
+    /// BehaviorSubject 타입의 repositories초기값으로 빈 배열을 가짐.
     private let repositories = BehaviorSubject<[Repository]>(value: [])
     /// DisposeBag 인스턴스를 사용하여 구독(subscriptions) 관리.
     private let disposeBag = DisposeBag()
@@ -21,7 +20,6 @@ class RepositoryListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 뷰 컨트롤러의 타이틀을 설정. 'Apple Repositories'라는 문자열로 설정됨.
         title = organization + " Repositories"
         
         // 테이블 뷰의 새로고침 컨트롤을 초기화하고 구성.
@@ -83,7 +81,7 @@ class RepositoryListViewController: UITableViewController {
             .filter { result in
                return result.count > 0
             }
-            // JSON 객체를 Repository 객체로 변환합니다.
+            // JSON 객체를 Repository 객체로 할당합니다.
             .map { objects in
                 return objects.compactMap { dic -> Repository? in
                     guard let id = dic["id"] as? Int,
@@ -109,7 +107,6 @@ class RepositoryListViewController: UITableViewController {
             // disposeBag을 사용하여 구독을 관리합니다.
             .disposed(by: disposeBag)
     }
-
 
 }
 
