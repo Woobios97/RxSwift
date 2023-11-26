@@ -9,21 +9,43 @@
 /* Begin PBXBuildFile section */
 		A55113C62B11EBBE000171EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55113C52B11EBBE000171EB /* AppDelegate.swift */; };
 		A55113C82B11EBBE000171EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55113C72B11EBBE000171EB /* SceneDelegate.swift */; };
-		A55113CA2B11EBBE000171EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55113C92B11EBBE000171EB /* ViewController.swift */; };
-		A55113CD2B11EBBE000171EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55113CB2B11EBBE000171EB /* Main.storyboard */; };
+		A55113CA2B11EBBE000171EB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55113C92B11EBBE000171EB /* MainViewController.swift */; };
 		A55113CF2B11EBC0000171EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55113CE2B11EBC0000171EB /* Assets.xcassets */; };
 		A55113D22B11EBC0000171EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55113D02B11EBC0000171EB /* LaunchScreen.storyboard */; };
+		A55113DB2B11EC51000171EB /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = A55113DA2B11EC51000171EB /* RxBlocking */; };
+		A55113DF2B11EC51000171EB /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A55113DE2B11EC51000171EB /* RxCocoa */; };
+		A55113E32B11EC51000171EB /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A55113E22B11EC51000171EB /* RxRelay */; };
+		A55113E72B11EC51000171EB /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A55113E62B11EC51000171EB /* RxSwift */; };
+		A55113F02B11EC7A000171EB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A55113EF2B11EC7A000171EB /* Kingfisher */; };
+		A55113F32B11EC86000171EB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A55113F22B11EC86000171EB /* SnapKit */; };
+		A55113F72B11F032000171EB /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55113F62B11F032000171EB /* SearchBar.swift */; };
+		A55113F92B11F373000171EB /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55113F82B11F373000171EB /* FilterView.swift */; };
+		A55113FB2B11F4FA000171EB /* BlogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55113FA2B11F4FA000171EB /* BlogList.swift */; };
+		A55113FD2B11F506000171EB /* BlogListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55113FC2B11F506000171EB /* BlogListCell.swift */; };
+		A55113FF2B11F519000171EB /* BlogListCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55113FE2B11F519000171EB /* BlogListCellData.swift */; };
+		A551140A2B13840F000171EB /* AlertActionConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55114092B13840F000171EB /* AlertActionConvertible.swift */; };
+		A551140C2B138962000171EB /* DKBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A551140B2B138962000171EB /* DKBlog.swift */; };
+		A551140E2B138BD3000171EB /* SearchBlogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A551140D2B138BD3000171EB /* SearchBlogAPI.swift */; };
+		A55114112B138C91000171EB /* SearchBlogNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55114102B138C91000171EB /* SearchBlogNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A55113C22B11EBBE000171EB /* SearchDaumBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchDaumBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55113C52B11EBBE000171EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A55113C72B11EBBE000171EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A55113C92B11EBBE000171EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A55113CC2B11EBBE000171EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A55113C92B11EBBE000171EB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A55113CE2B11EBC0000171EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A55113D12B11EBC0000171EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A55113D32B11EBC0000171EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A55113F62B11F032000171EB /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		A55113F82B11F373000171EB /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		A55113FA2B11F4FA000171EB /* BlogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogList.swift; sourceTree = "<group>"; };
+		A55113FC2B11F506000171EB /* BlogListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListCell.swift; sourceTree = "<group>"; };
+		A55113FE2B11F519000171EB /* BlogListCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListCellData.swift; sourceTree = "<group>"; };
+		A55114092B13840F000171EB /* AlertActionConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionConvertible.swift; sourceTree = "<group>"; };
+		A551140B2B138962000171EB /* DKBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKBlog.swift; sourceTree = "<group>"; };
+		A551140D2B138BD3000171EB /* SearchBlogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogAPI.swift; sourceTree = "<group>"; };
+		A55114102B138C91000171EB /* SearchBlogNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +53,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55113E32B11EC51000171EB /* RxRelay in Frameworks */,
+				A55113DF2B11EC51000171EB /* RxCocoa in Frameworks */,
+				A55113DB2B11EC51000171EB /* RxBlocking in Frameworks */,
+				A55113F02B11EC7A000171EB /* Kingfisher in Frameworks */,
+				A55113F32B11EC86000171EB /* SnapKit in Frameworks */,
+				A55113E72B11EC51000171EB /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +86,85 @@
 			children = (
 				A55113C52B11EBBE000171EB /* AppDelegate.swift */,
 				A55113C72B11EBBE000171EB /* SceneDelegate.swift */,
-				A55113C92B11EBBE000171EB /* ViewController.swift */,
-				A55113CB2B11EBBE000171EB /* Main.storyboard */,
+				A55114002B11F51D000171EB /* Entities */,
+				A551140F2B138BD7000171EB /* Network */,
+				A55114012B11F52E000171EB /* Presentation */,
 				A55113CE2B11EBC0000171EB /* Assets.xcassets */,
 				A55113D02B11EBC0000171EB /* LaunchScreen.storyboard */,
 				A55113D32B11EBC0000171EB /* Info.plist */,
 			);
 			path = SearchDaumBlog;
+			sourceTree = "<group>";
+		};
+		A55114002B11F51D000171EB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A55113FE2B11F519000171EB /* BlogListCellData.swift */,
+				A55114092B13840F000171EB /* AlertActionConvertible.swift */,
+				A551140B2B138962000171EB /* DKBlog.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A55114012B11F52E000171EB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A55114052B1360AF000171EB /* MainViewController */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A55114042B13608B000171EB /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A55114062B1360C4000171EB /* SearchBar */,
+				A55114072B1360D8000171EB /* BlogListView */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		A55114052B1360AF000171EB /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A55113C92B11EBBE000171EB /* MainViewController.swift */,
+				A55114042B13608B000171EB /* SubComponents */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		A55114062B1360C4000171EB /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				A55113F62B11F032000171EB /* SearchBar.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		A55114072B1360D8000171EB /* BlogListView */ = {
+			isa = PBXGroup;
+			children = (
+				A55113FA2B11F4FA000171EB /* BlogList.swift */,
+				A55114082B1360E6000171EB /* SubComponents */,
+			);
+			path = BlogListView;
+			sourceTree = "<group>";
+		};
+		A55114082B1360E6000171EB /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A55113F82B11F373000171EB /* FilterView.swift */,
+				A55113FC2B11F506000171EB /* BlogListCell.swift */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		A551140F2B138BD7000171EB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A551140D2B138BD3000171EB /* SearchBlogAPI.swift */,
+				A55114102B138C91000171EB /* SearchBlogNetwork.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +183,14 @@
 			dependencies = (
 			);
 			name = SearchDaumBlog;
+			packageProductDependencies = (
+				A55113DA2B11EC51000171EB /* RxBlocking */,
+				A55113DE2B11EC51000171EB /* RxCocoa */,
+				A55113E22B11EC51000171EB /* RxRelay */,
+				A55113E62B11EC51000171EB /* RxSwift */,
+				A55113EF2B11EC7A000171EB /* Kingfisher */,
+				A55113F22B11EC86000171EB /* SnapKit */,
+			);
 			productName = SearchDaumBlog;
 			productReference = A55113C22B11EBBE000171EB /* SearchDaumBlog.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +219,11 @@
 				Base,
 			);
 			mainGroup = A55113B92B11EBBE000171EB;
+			packageReferences = (
+				A55113D92B11EC51000171EB /* XCRemoteSwiftPackageReference "RxSwift" */,
+				A55113EE2B11EC7A000171EB /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A55113F12B11EC86000171EB /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = A55113C32B11EBBE000171EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +240,6 @@
 			files = (
 				A55113D22B11EBC0000171EB /* LaunchScreen.storyboard in Resources */,
 				A55113CF2B11EBC0000171EB /* Assets.xcassets in Resources */,
-				A55113CD2B11EBBE000171EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +250,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A55113CA2B11EBBE000171EB /* ViewController.swift in Sources */,
+				A55113CA2B11EBBE000171EB /* MainViewController.swift in Sources */,
+				A55113FD2B11F506000171EB /* BlogListCell.swift in Sources */,
+				A551140C2B138962000171EB /* DKBlog.swift in Sources */,
+				A55113FB2B11F4FA000171EB /* BlogList.swift in Sources */,
+				A551140E2B138BD3000171EB /* SearchBlogAPI.swift in Sources */,
+				A55113FF2B11F519000171EB /* BlogListCellData.swift in Sources */,
+				A55113F72B11F032000171EB /* SearchBar.swift in Sources */,
 				A55113C62B11EBBE000171EB /* AppDelegate.swift in Sources */,
+				A55113F92B11F373000171EB /* FilterView.swift in Sources */,
 				A55113C82B11EBBE000171EB /* SceneDelegate.swift in Sources */,
+				A55114112B138C91000171EB /* SearchBlogNetwork.swift in Sources */,
+				A551140A2B13840F000171EB /* AlertActionConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A55113CB2B11EBBE000171EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A55113CC2B11EBBE000171EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A55113D02B11EBC0000171EB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -218,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -297,9 +410,9 @@
 				INFOPLIST_FILE = SearchDaumBlog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,9 +438,9 @@
 				INFOPLIST_FILE = SearchDaumBlog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +476,66 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A55113D92B11EC51000171EB /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
+		A55113EE2B11EC7A000171EB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
+		A55113F12B11EC86000171EB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A55113DA2B11EC51000171EB /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A55113D92B11EC51000171EB /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		A55113DE2B11EC51000171EB /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A55113D92B11EC51000171EB /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		A55113E22B11EC51000171EB /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A55113D92B11EC51000171EB /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		A55113E62B11EC51000171EB /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A55113D92B11EC51000171EB /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		A55113EF2B11EC7A000171EB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A55113EE2B11EC7A000171EB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		A55113F22B11EC86000171EB /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A55113F12B11EC86000171EB /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A55113BA2B11EBBE000171EB /* Project object */;
 }
