@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
             .map { blog -> [BlogListCellData] in
                 return blog.documents
                     .map { doc in
-                        let thumnailURL = URL(string: doc.thumnail ?? "")
+                        let thumnailURL = URL(string: doc.thumbnail ?? "")
                         return BlogListCellData(
                             thumbnailURL: thumnailURL,
                             name: doc.name,

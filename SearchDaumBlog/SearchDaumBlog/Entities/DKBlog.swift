@@ -14,20 +14,22 @@ struct DKBlog: Codable {
 struct DKDocument: Codable {
     let title: String?
     let name: String?
-    let thumnail: String?
+    let thumbnail: String?
     let datetime: Date?
     
     enum CodingKeys: String, CodingKey {
-        case title, thumnail, datetime
+        case title, thumbnail, datetime
         case name = "blogname"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.title = try? values.decode(String?.self, forKey: .title)
+        self.title = try? values.decode(String?.self, forKey: .title)?
+            .replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+            .replacingOccurrences(of: "&[^;]+;", with: "", options: .regularExpression, range: nil)
         self.name = try? values.decode(String?.self, forKey: .name)
-        self.thumnail = try? values.decode(String?.self, forKey: .thumnail)
+        self.thumbnail = try? values.decode(String?.self, forKey: .thumbnail)
         self.datetime = Date.parse(values, key: .datetime)
     }
 }

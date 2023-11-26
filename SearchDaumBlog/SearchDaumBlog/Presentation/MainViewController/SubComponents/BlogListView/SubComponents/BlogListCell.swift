@@ -58,6 +58,7 @@ class BlogListCell: UITableViewCell {
     
     func setData(_ data: BlogListCellData) {
         thumbnailImageView.kf.setImage(with: data.thumbnailURL, placeholder: UIImage(systemName: "photo"))
+        print(#fileID, #function, #line, "this is - \(data.thumbnailURL)")
         nameLabel.text = data.name
         titleLabel.text = data.title
         
