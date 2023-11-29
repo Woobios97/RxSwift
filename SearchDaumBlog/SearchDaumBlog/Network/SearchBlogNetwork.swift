@@ -18,7 +18,7 @@ enum SearchNetworkError: Error {
 // 블로그 검색을 위한 네트워크 요청을 관리하는 클래스
 class SearchBlogNetwork {
     private let session: URLSession // HTTP 요청을 처리할 URLSession 인스턴스
-
+    
     let api = SearchBlogAPI() // API 엔드포인트 구성을 위한 인스턴스
     
     // 초기화 메서드, 기본값으로 공유 URLSession 인스턴스 사용
