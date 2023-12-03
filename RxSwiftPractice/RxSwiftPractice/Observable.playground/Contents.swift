@@ -41,7 +41,7 @@ Observable.of([1, 2, 3, 4, 5])
 
 
 /*
- from은 Array만 받는다. from이라느 연산자는 자동적으로 자기가 받은 Array 속에 있는 element들을 방출하게 된다. 따라서 from 연산자는 오직 Array만 취하게 된다. Array 각각의 요소들을 방출하게 된다,
+ from은 Array만 받는다. from이라는 연산자는 자동적으로 자기가 받은 Array 속에 있는 element들을 방출하게 된다. 따라서 from 연산자는 오직 Array만 취하게 된다. Array 각각의 요소들을 방출하게 된다,
  */
 print("----------from----")
 Observable.from([1, 2, 3, 4, 5])
@@ -50,7 +50,7 @@ Observable.from([1, 2, 3, 4, 5])
     })
 
 /*
- Observable은 그저 실제로는 시퀀스의 정의일뿐이다. subscriber, 구독되기 전애는 아무런 이벤트도 내보내지않는다. 그거 정의일뿐이다.
+ Observable은 그저 실제로는 시퀀스의 정의일뿐이다. subscriber, 구독되기 전에는 아무런 이벤트도 내보내지않는다. 그거 정의일뿐이다.
  제대로 동작하는 지 확인하려면 반드시 subscribe을 해야한다.
  */
 
@@ -163,7 +163,6 @@ Observable.of(1, 2, 3)
     }
     .disposed(by: disposeBag)
 
-
 /*
 create는 escaping클로저이다. AnyObserver<_>라는 escaping이 있다. AnyObserver를 취한다음에, disposable을 return하는 형식의 클로저이다.
  여기서 말하는 AnyObserver는 제네릭타입이고, Observable 시퀀스에 값을 추가할 수 있다. 이렇게 추가한 것은 subscribe을 했을 떄, 방출되게 된다.
@@ -171,50 +170,50 @@ create는 escaping클로저이다. AnyObserver<_>라는 escaping이 있다. AnyO
  종료된 다음에 next이벤트를 날려도 그 next이벤트는 방출되지않는다.
  */
 
-//print("----------create----")
-//Observable.create{ observer -> Disposable in
-//    observer.onNext(1)
-////    observer.on(.next(1))
-//    observer.onCompleted()
-////    observer.on(.completed)
-//    observer.onNext(2)
-//    return Disposables.create()
-//}
-//.subscribe {
-//    print($0)
-//}
-//.disposed(by: disposeBag)
+print("----------create----")
+Observable.create{ observer -> Disposable in
+    observer.onNext(1)
+//    observer.on(.next(1))
+    observer.onCompleted()
+//    observer.on(.completed)
+    observer.onNext(2)
+    return Disposables.create()
+}
+.subscribe {
+    print($0)
+}
+.disposed(by: disposeBag)
 
 /*
 Error는 해당 에러를 방출시키고 종료시키기 때문에, 해당 observable을 종료시키기 때문에, 에더단에서 observable이 종료되었고, 그 아래에 completed, onNext는 종료된 상태에서 방출된 event이기 떄문에, 더이상 방출되지않는다라는 것을 알 수 있다.
  */
-//print("----------create2----")
-//enum MyError: Error {
-//    case asError
-//}
-//
-//Observable.create { observer -> Disposable in
-//    observer.onNext(1)
-//    observer.onError(MyError.asError)
-//    observer.onCompleted()
-//    observer.onNext(2)
-//    return Disposables.create()
-//}
-//.subscribe(
-//    onNext: {
-//        print($0)
-//    },
-//    onError: {
-//        print($0.localizedDescription)
-//    },
-//    onCompleted: {
-//        print("completed")
-//    },
-//    onDisposed: {
-//        print("disposed")
-//    }
-//)
-//.disposed(by: disposeBag)
+print("----------create2----")
+enum MyError: Error {
+    case asError
+}
+
+Observable.create { observer -> Disposable in
+    observer.onNext(1)
+    observer.onError(MyError.asError)
+    observer.onCompleted()
+    observer.onNext(2)
+    return Disposables.create()
+}
+.subscribe(
+    onNext: {
+        print($0)
+    },
+    onError: {
+        print($0.localizedDescription)
+    },
+    onCompleted: {
+        print("completed")
+    },
+    onDisposed: {
+        print("disposed")
+    }
+)
+.disposed(by: disposeBag)
 
 /*
 두 개의 onNext요소인 1과 2가 모두 찍힐 것이다. 종료를 위한 어떠한 이벤트도 방출되지않고, dispose도 하지않기 때문에, 결과적으로는 메모리낭비가 발생하게 될 것이다. 따라서 반드시 dispose코드를 넣어줘야한다.
