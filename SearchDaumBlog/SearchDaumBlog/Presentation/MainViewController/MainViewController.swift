@@ -90,10 +90,7 @@ class MainViewController: UIViewController {
         
         // 정렬된 데이터를 리스트 뷰에 바인딩
         Observable
-            .combineLatest(
-                sortedType,
-                cellData
-            ) { type, data -> [BlogListCellData] in
+            .combineLatest(sortedType, cellData) { type, data -> [BlogListCellData] in
                 switch type {
                 case .title:
                     return data.sorted { $0.title ?? "" < $1.title ?? "" }
@@ -196,8 +193,7 @@ extension MainViewController {
     }
     
     // 알림창을 표시하고 사용자의 선택을 처리하는 메서드
-    func presentAlertController<Action: AlertActionConvertible>(_ alertController: UIAlertController,
-                                                                actions: [Action]) -> Signal<Action> {
+    func presentAlertController<Action: AlertActionConvertible>(_ alertController: UIAlertController, actions: [Action]) -> Signal<Action> {
         if actions.isEmpty { return .empty() }
         return Observable
             .create { [weak self] observer in

@@ -77,7 +77,7 @@ Observable.of(1, 2, 3)
 
 print("----------subscribe3----")
 Observable.of(1, 2, 3)
-    .subscribe (onNext: {
+    .subscribe(onNext: {
         print($0)
     })
 
@@ -107,6 +107,20 @@ Observable<Void>.empty()
         print("Completed")
     })
 
+print("----------empty3----")
+// 'empty' 연산자를 사용하여 Observable 생성
+let emptyObservable = Observable<Void>.empty()
+
+emptyObservable
+    .subscribe(
+        onNext: { element in
+            print("This will never be printed because there are no elements.")
+        },
+        onCompleted: {
+            print("Completed")
+        }
+    )
+
 /*
  작동은 하지만, 아무것도 내뱉지 않는다.
  */
@@ -130,7 +144,7 @@ Observable.range(start: 1, count: 9)
  Observable은 subscribe없이는 방출할 수 없다. 즉, subscribe가 Observable의 방아쇠 역할을 하는 것이다.
  반대로 말해서, 방아쇠를 당겨서 구독을 했다면, 이를 취소를 해야되지않을까?
  구독을 취소함으로써, Observable을 수동적으로 종료시킬 수도 있다. 그것이 바로 dispose의 개념이다.
- */
+*/
 
 print("----------dispose----")
 Observable.of(1, 2, 3)
@@ -149,12 +163,14 @@ Observable.of(1, 2, 3)
     })
 
 /*
- disposeBag은 구독들을 일일이 관리하는 것은 효율적이지 못한 방법이다. 따라서, RxSwift에서 제공하는 DisposeBag을 이용할 수 있는데, disposeBag에서는 .disposed(by: disposeBag) 이 메소드를 통해서 추가를 통해서 이 메서드는 disposeable를 갖고 있다. disposeBag이 할당해제할 때마다 dispose를 호출하게 된다.
+ disposeBag은 구독들을 일일이 관리하는 것은 효율적이지 못한 방법이다. 
+ 따라서, RxSwift에서 제공하는 DisposeBag을 이용할 수 있는데, disposeBag에서는 .disposed(by: disposeBag) 이 메소드를 통해서 추가를 통해서 이 메서드는 disposeable를 갖고 있다.
+ disposeBag이 할당해제할 때마다 dispose를 호출하게 된다.
  Observable에 대해서 구독을 하고 있을 때, 이것을 즉시 disposeBag에 추가를 하는 거다. disposeBag은 잘 갖고있다가 자신이 할당해제할 떄, 모든 구독에 대해서 .dispose를 날리는 것이다.
  disposeBag을 subscription에 추가하거나 수동적으로 dispose를 호출하는 것을 빼먹는다면, 당연히 메모리누수가 일어날 것이다. observable이 끝나지 않기 떄문이다.
  */
 
-print("----------disposeBag----")
+print("----------disposeBag2----")
 let disposeBag = DisposeBag()
 
 Observable.of(1, 2, 3)
@@ -166,54 +182,53 @@ Observable.of(1, 2, 3)
 /*
 create는 escaping클로저이다. AnyObserver<_>라는 escaping이 있다. AnyObserver를 취한다음에, disposable을 return하는 형식의 클로저이다.
  여기서 말하는 AnyObserver는 제네릭타입이고, Observable 시퀀스에 값을 추가할 수 있다. 이렇게 추가한 것은 subscribe을 했을 떄, 방출되게 된다.
- 172줄과 173줄, 174줄과 175줄을 동일한 표현이다. 172줄은 방출되었으나, 176줄은 방출되지않았다. 이유는? onCompleted를 통해서 Observable이 종료되었기 때문이다.
- 종료된 다음에 next이벤트를 날려도 그 next이벤트는 방출되지않는다.
- */
+ 172줄과 173줄, 174줄과 175줄을 동일한 표현이다. 172줄은 방출되었으나, 176줄은 방출되지않았다. 이유는? onCompleted를 통해서 Observable이 종료되었기 때문이다.종료된 다음에 next이벤트를 날려도 그 next이벤트는 방출되지않는다.
+*/
 
-print("----------create----")
-Observable.create{ observer -> Disposable in
-    observer.onNext(1)
-//    observer.on(.next(1))
-    observer.onCompleted()
-//    observer.on(.completed)
-    observer.onNext(2)
-    return Disposables.create()
-}
-.subscribe {
-    print($0)
-}
-.disposed(by: disposeBag)
+//print("----------create----")
+//Observable.create{ observer -> Disposable in
+//    observer.onNext(1)
+////    observer.on(.next(1))
+//    observer.onCompleted()
+////    observer.on(.completed)
+//    observer.onNext(2)
+//    return Disposables.create()
+//}
+//.subscribe {
+//    print($0)
+//}
+//.disposed(by: disposeBag)
 
 /*
 Error는 해당 에러를 방출시키고 종료시키기 때문에, 해당 observable을 종료시키기 때문에, 에더단에서 observable이 종료되었고, 그 아래에 completed, onNext는 종료된 상태에서 방출된 event이기 떄문에, 더이상 방출되지않는다라는 것을 알 수 있다.
  */
-print("----------create2----")
-enum MyError: Error {
-    case asError
-}
-
-Observable.create { observer -> Disposable in
-    observer.onNext(1)
-    observer.onError(MyError.asError)
-    observer.onCompleted()
-    observer.onNext(2)
-    return Disposables.create()
-}
-.subscribe(
-    onNext: {
-        print($0)
-    },
-    onError: {
-        print($0.localizedDescription)
-    },
-    onCompleted: {
-        print("completed")
-    },
-    onDisposed: {
-        print("disposed")
-    }
-)
-.disposed(by: disposeBag)
+//print("----------create2----")
+//enum MyError: Error {
+//    case asError
+//}
+//
+//Observable.create { observer -> Disposable in
+//    observer.onNext(1)
+//    observer.onError(MyError.asError)
+//    observer.onCompleted()
+//    observer.onNext(2)
+//    return Disposables.create()
+//}
+//.subscribe(
+//    onNext: {
+//        print($0)
+//    },
+//    onError: {
+//        print($0.localizedDescription)
+//    },
+//    onCompleted: {
+//        print("completed")
+//    },
+//    onDisposed: {
+//        print("disposed")
+//    }
+//)
+//.disposed(by: disposeBag)
 
 /*
 두 개의 onNext요소인 1과 2가 모두 찍힐 것이다. 종료를 위한 어떠한 이벤트도 방출되지않고, dispose도 하지않기 때문에, 결과적으로는 메모리낭비가 발생하게 될 것이다. 따라서 반드시 dispose코드를 넣어줘야한다.
@@ -246,12 +261,11 @@ Observable.create { observer -> Disposable in
 //)
 ////.disposed(by: disposeBag)
 
-
 /*
  subscribe를 기다리는 Observable를 만드는 대신에, 각 subscribe에게 새롭게 Observable항목을 제공하는 ObservableFactory를 만드는 방식이다.
  Observable.deffered가 있다고 했을 때, Observable을 감싸는 Observable이다. 이 내부에는 또다른 observable를 선언해서 만들 수 있다.
  Observable.deferred { .. } 내부에 observable들을 하니씩 내뱉는 것을 볼 수 있다. 마치 Observable.deferred { .. }가 없고, Observable.of(1, 2, 3)가 바로 작동한 것처럼 보인다.
- */
+*/
 print("----------differed1----")
 Observable.deferred {
     Observable.of(1, 2, 3)
