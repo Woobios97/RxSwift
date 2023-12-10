@@ -110,7 +110,6 @@ let 올림픽경기 = PublishSubject<선수>()
 /*
 올림픽경기가 선수를 받아서 선수가 가지고 있는 점수에 해당하는 것만 이벤트로 발생시킨다. 즉, flatMap를 통해서 2개의 중첩된 Observable 속에 element를 뽑아낼 수 있는 것이다.
  따라서 결과를 보면, 올림픽경기가 시작을 하고, 국가대표를 배출을 하는데, 그랬을 때 국가대표가 가지고 있는 초기값을 나타내게 된다. 그다음에, 국가대표가 구독 이후에, 발생한 이벤트를 내보내게 된다. 그다음에, 미국 국가대표가 나오게 되는데, 그래서 미국 국가대표가 갖고있는 초기값을 8이 나오게 된 것이다. 그 다음에, 순차적으로 한국국가대표가 onNext이벤트를 내보내게 되면, 그 10점이 그대로 반영되고, 미국국가대표가 onNext를 하면, 그대로 나오게 되는 것이다. 여기서 BehaviorSubject의 특징에 따라서 초기값이 같이 표현되는 것도 있지만, 중요한 것은 PublishSubject라는 Observable 그리고 거기에 중첩되는 선수, 선수가 갖고있는 BehaviorSubject라는 점수Observable 이것들이 중첩을 해서 갖고있는데, flatMap를 통해서 꺼낼 수 있다.
- 
 */
 
 print("-----------flatMapLatest-----")
@@ -241,7 +240,7 @@ input
         var numberList = number
         numberList.insert("-", at: 3) // 010-
         numberList.insert("-", at: 8)  // 010-1234-
-        let number = numberList.reduce(" ", +)
+        let number = numberList.reduce("", +)
         return number
     }
     .subscribe(onNext: {

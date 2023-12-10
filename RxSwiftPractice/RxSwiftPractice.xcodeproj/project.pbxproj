@@ -32,6 +32,7 @@
 		A5503E522B21C1F6002767D4 /* CombiningOpertor.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombiningOpertor.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A56843D52B20846F00CFF10B /* Subjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A568440C2B209D8D00CFF10B /* FilteringOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilteringOperator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A5D661612B24594E007431B9 /* TimeBasedOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TimeBasedOperator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A7357132864474EF294780C3 /* Pods-RxSwiftPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractice.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftPractice/Pods-RxSwiftPractice.release.xcconfig"; sourceTree = "<group>"; };
 		D6C193FCEC041177F2274559 /* Pods_RxSwiftPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +75,7 @@
 				A568440C2B209D8D00CFF10B /* FilteringOperator.playground */,
 				A5503E512B219D03002767D4 /* TransformingOperator.playground */,
 				A5503E522B21C1F6002767D4 /* CombiningOpertor.playground */,
+				A5D661612B24594E007431B9 /* TimeBasedOperator.playground */,
 				A54158262B16F7C900D1CACE /* RxSwiftPractice */,
 				A54158252B16F7C900D1CACE /* Products */,
 				0CAFABBAC9EEC73BE4E115FC /* Pods */,
